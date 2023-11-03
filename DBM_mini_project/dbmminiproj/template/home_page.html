@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transaction Tracking</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .input-group {
+        margin: 10px 0;
+      }
+
+      .transaction-form {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ddd;
+      }
+
+      .transaction-form h2 {
+        margin-top: 0;
+      }
+
+      .transaction-form label,
+      .transaction-form input,
+      .transaction-form button {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .transaction-list ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .transaction-list li {
+        border: 1px solid #ddd;
+        padding: 10px;
+      }
+
+      #add-transaction-button {
+        background-color: #0074cc;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      #add-transaction-button:hover {
+        background-color: #0055a4;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Transaction Tracking</h1>
+    </header>
+    <main>
+      <section class="transaction-form">
+        <h2>Enter Transaction Details</h2>
+
+        <form action="#" method="post">
+          <div class="input-group">
+            <label for="transaction-id">Transaction ID:</label>
+            <input
+              type="text"
+              id="transaction-id"
+              name="transaction-id"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required />
+          </div>
+          <div class="input-group">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required />
+          </div>
+          <button type="submit">Submit</button>
+          <button id="add-transaction-button">Add New Transaction</button>
+        </form>
+      </section>
+
+      <section class="transaction-list">
+        <h2>Transaction History</h2>
+        {% for transaction in transactions} -{{transaction.transaction-id}}
+        {{transaction.transaction-amount}} {{transaction.transaction-date}}<br />
+        {% endfor %}
+      </section>
+    </main>
+  </body>
+</html>

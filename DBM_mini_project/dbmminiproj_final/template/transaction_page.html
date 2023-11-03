@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      .input-group {
+        margin: 10px 0;
+      }
+
+      .input-group label {
+        display: block;
+        font-weight: bold;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      .input-group input:focus {
+        outline-color: dodgerblue;
+      }
+
+      .btn {
+        width: 100%;
+        background: dodgerblue;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background: royalblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Transaction Information :</h2>
+      <form action="#" method="post">
+        {% csrf_token %} {% load static %}
+        <div class="input-group">
+          <label for="CustomerID">CustomerID:</label>
+          <input type="text" id="CustomerID" name="CustomerID" required />
+        </div>
+        <div class="input-group">
+          <label for="TransactionID">TransactionID:</label>
+          <input
+            type="TransactionID"
+            id="TransactionID"
+            name="TransactionID"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="Amount">Amount:</label>
+          <input type="Amount" id="Amount" name="Amount" required />
+        </div>
+        <button type="submit" class="btn">Submit:</button>
+      </form>
+    </div>
+  </body>
+</html>
